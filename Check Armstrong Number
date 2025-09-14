@@ -1,0 +1,17 @@
+class Solution {
+    public boolean isArmstrong(int n) {
+        int num = n;
+        int sum = 0;
+        while(n>0){
+            int lDigit = n%10;
+            sum = sum+(lDigit*lDigit*lDigit);
+            n = n/10;
+        }
+        if(num == sum){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+}
