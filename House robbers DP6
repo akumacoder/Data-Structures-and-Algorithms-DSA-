@@ -1,0 +1,17 @@
+class Solution {
+    public int rob(int[] nums) {
+        int n = nums.length;
+        int maxmoney = 0;
+        int mini = nums[0];
+
+        for(int i=0; i<n;i++){
+            int cost = nums[i];
+            if(i>1) cost += maxmoney;
+            int notake = 0 + mini;
+            int curi = Math.max(cost , notake);
+            maxmoney = mini;
+            mini = curi;
+        }
+        return mini;
+    }
+}
